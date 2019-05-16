@@ -12,9 +12,12 @@ class Customer extends React.Component {
     handleSubmit = event => {
         event.preventDefault();
         axios.post('/api/reservation', this.state).then(function (req, res) {
-            console.log(req);
-            console.log(res);
         })
+        this.setState({
+            name: "",
+            phoneNum:"",
+            reservationTime: ""
+        });
     }
 
     handleReservation = data => event => {
@@ -60,14 +63,14 @@ class Customer extends React.Component {
                 <div id="reservation">
                     <form id="reservationForm">
                         <label htmlFor="name">Name to hold Reservation</label>
-                        <input onChange={this.handleInputChange('name')} className="name" type="name" name="name" placeholder="Name"></input><br></br>
+                        <input value={this.state.name} onChange={this.handleInputChange('name')} className="name" type="name" name="name" placeholder="Name"></input><br></br>
 
                         <div id="avail-time-btn">
                             {availableTime}
                         </div>
 
                         <label htmlFor="phone">Phone #</label>
-                        <input onChange={this.handleInputChange('phoneNum')} className="phone" value={this.state.phoneNum} type="tel" maxLength="9" name="phone"></input><br></br>
+                        <input onChange={this.handleInputChange('phoneNum')} className="phone" value={this.state.phoneNum} type="tel" maxLength="10" name="phone"></input><br></br>
 
                         <button onClick={this.handleSubmit} className="submit-btn">Submit</button>
                     </form>
