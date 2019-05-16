@@ -1,14 +1,22 @@
 import React from 'react';
+const axios = require("axios");
 
 class Customer extends React.Component {
     state = {
         name: "",
         phoneNum: "",
-        time: ""
+        reservationTime: 0
+    }
+
+    handleSubmit = event => {
+        event.preventDefault();
+        axios.post('/api/reservation', this.state).then(function(req, res) {
+            console.log(req);
+            console.log(res);
+        })
     }
 
     handleInputChange = key => event => {
-        event.preventDefault();
         this.setState({
             [key]: event.target.value
         });
@@ -36,13 +44,14 @@ class Customer extends React.Component {
                         <label htmlFor="name">Name to hold Reservation</label>
                         <input onChange={this.handleInputChange('name')} className="name" type="name" name="name" placeholder="Name"></input><br></br>
 
+                        {/* TODO: Make reservation time slot more UI friendly */}
                         <label htmlFor="time">Time of Reservation</label>
-                        <input onChange={this.handleInputChange('time')} className="time" type="time" placeholder="12:00" name="time" step="900"></input><br></br>
+                        <input onChange={this.handleInputChange('reservationTime')} className="time" type="time" placeholder="12:00" name="time"></input><br></br>
 
                         <label htmlFor="phone">Phone #</label>
                         <input onChange={this.handleInputChange('phoneNum')} className="phone" type="tel" maxLength="9" name="phone" min='12:00' max='21:00'></input><br></br>
 
-                        <button className="submit-btn">Submit</button>
+                        <button onClick={this.handleSubmit} className="submit-btn">Submit</button>
                     </form>
                 </div>
 
