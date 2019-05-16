@@ -5,31 +5,45 @@ class Customer extends React.Component {
     state = {
         name: "",
         phoneNum: "",
-        reservationTime: 0
+        reservationTime: "",
+        availableTime: ["12:00", "12:30", "1:00", "1:30", "2:00", "2:30", "3:00", "3:30", "4:00", "4:30", "5:00", "5:30", "6:00", "6:30", "7:00", "7:30", "8:00", "8:30", "9:00"]
     }
 
     handleSubmit = event => {
         event.preventDefault();
-        axios.post('/api/reservation', this.state).then(function(req, res) {
+        axios.post('/api/reservation', this.state).then(function (req, res) {
             console.log(req);
             console.log(res);
         })
     }
 
+    handleReservation = data => event => {
+        event.preventDefault();
+        console.log(data);
+        this.setState({reservationTime: data});
+
+    }
+
     handleInputChange = key => event => {
+        console.log(/\d/.test(event.target.value))
+        if (key === "phoneNum" && event.target.value === isNaN) return;
         this.setState({
             [key]: event.target.value
         });
-        console.log(this.state);
     }
 
     render() {
+
+        const availableTime = this.state.availableTime.map(data => {
+            return (<button key={data} style={this.state.reservationTime === data ? {backgroundColor: 'green'}:{backgroundColor: 'pink'}} data-time={data} onClick={this.handleReservation(data)}>{data}</button>)
+        })
+
         return (
             <React.Fragment>
                 <div>
                     <h1>Customer</h1>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque velit, lobortis ut magna
+                       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque velit, lobortis ut magna
                     varius, blandit rhoncus sem. Morbi lacinia nisi ac dui fermentum, sed luctus urna tincidunt.
                     Etiam ut feugiat ex. Cras non risus mi. Curabitur mattis rutrum ipsum, ut aliquet urna
                     imperdiet ac. Sed nec nulla aliquam, bibendum odio eget, vestibulum tortor. Cras rutrum
@@ -44,12 +58,12 @@ class Customer extends React.Component {
                         <label htmlFor="name">Name to hold Reservation</label>
                         <input onChange={this.handleInputChange('name')} className="name" type="name" name="name" placeholder="Name"></input><br></br>
 
-                        {/* TODO: Make reservation time slot more UI friendly */}
-                        <label htmlFor="time">Time of Reservation</label>
-                        <input onChange={this.handleInputChange('reservationTime')} className="time" type="time" placeholder="12:00" name="time"></input><br></br>
+                        <div id="avail-time-btn">
+                            {availableTime}
+                        </div>
 
                         <label htmlFor="phone">Phone #</label>
-                        <input onChange={this.handleInputChange('phoneNum')} className="phone" type="tel" maxLength="9" name="phone" min='12:00' max='21:00'></input><br></br>
+                        <input onChange={this.handleInputChange('phoneNum')} className="phone" value={this.state.phoneNum} type="tel" maxLength="9" name="phone"></input><br></br>
 
                         <button onClick={this.handleSubmit} className="submit-btn">Submit</button>
                     </form>
