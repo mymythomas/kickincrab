@@ -25,8 +25,12 @@ class Customer extends React.Component {
     }
 
     handleInputChange = key => event => {
-        console.log(/\d/.test(event.target.value))
-        if (key === "phoneNum" && event.target.value === isNaN) return;
+        if (event.target.value <= 1) {
+            return this.setState({
+                [key]: event.target.value
+            });
+        }
+        if (key === "phoneNum" && !/^\d+$/.test(event.target.value)) return;
         this.setState({
             [key]: event.target.value
         });
