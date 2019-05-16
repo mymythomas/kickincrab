@@ -3,6 +3,8 @@ const axios = require("axios");
 
 class Customer extends React.Component {
     state = {
+        numInParty: "",
+        email: "",
         name: "",
         phoneNum: "",
         reservationTime: "",
@@ -16,7 +18,9 @@ class Customer extends React.Component {
         this.setState({
             name: "",
             phoneNum:"",
-            reservationTime: ""
+            reservationTime: "",
+            numInParty: "",
+            email: ""
         });
     }
 
@@ -28,11 +32,11 @@ class Customer extends React.Component {
     }
 
     handleInputChange = key => event => {
-        if (event.target.value <= 1) {
+        if (key === "phoneNum" && event.target.value <= 1) {
             return this.setState({
                 [key]: event.target.value
             });
-        }
+        };
         if (key === "phoneNum" && !/^\d+$/.test(event.target.value)) return;
         this.setState({
             [key]: event.target.value
@@ -62,30 +66,25 @@ class Customer extends React.Component {
                 </div>
                 <div id="reservation">
                     <form id="reservationForm">
-                        <label htmlFor="name">Name to hold Reservation</label>
+                        <label htmlFor="name">Name to hold Reservation: </label>
                         <input value={this.state.name} onChange={this.handleInputChange('name')} className="name" type="name" name="name" placeholder="Name"></input><br></br>
 
                         <div id="avail-time-btn">
+                            <p>Available Reservation Times: </p>
                             {availableTime}
                         </div>
+                        <label htmlFor="numInParty"># of people in your party. (Please include children and babies as they ALSO FUCKINGG TAKE SPACE)</label>
+                        <input type="text" maxLength="2" style={{width: '27px'}} value={this.state.numInParty} onChange={this.handleInputChange('numInParty')}></input> <br></br>
 
-                        <label htmlFor="phone">Phone #</label>
+                        <label htmlFor="phone">Phone #: </label>
                         <input onChange={this.handleInputChange('phoneNum')} className="phone" value={this.state.phoneNum} type="tel" maxLength="10" name="phone"></input><br></br>
+
+                        <label htmlFor="email">Email: </label>
+                        <input onChange={this.handleInputChange('email')} style={{width: '200px'}} className="email" value={this.state.email} type="email" name="email"></input><br></br>
 
                         <button onClick={this.handleSubmit} className="submit-btn">Submit</button>
                     </form>
                 </div>
-
-                {/* {document.addEventListener('click', function (event) {
-                    if (!event.target.matches('.submit-btn')) return;
-                    event.preventDefault();
-                    const reservation = {
-                        name: this.getElementsByClassName('name')[0].value,
-                        time: this.getElementsByClassName('time')[0].value,
-                        phoneNum: this.getElementsByClassName('phone')[0].value
-                    }
-                    console.log(reservation);
-                }, false)} */}
             </React.Fragment>
         )
     }
