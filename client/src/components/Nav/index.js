@@ -17,7 +17,7 @@ function Navbar() {
         </Nav>
         <Nav className="justify-content-center">
             <Nav.Item>
-                <Nav.Link href="/employer">Employer</Nav.Link>
+                <Nav.Link href="/Employer">Employer</Nav.Link>
             </Nav.Item>
             <Nav.Item>
                 <Nav.Link href="/customer">Customer</Nav.Link>
