@@ -10,12 +10,12 @@ class Customer extends React.Component {
         reservationTime: "",
         // Sets a default array of all available times to make reservation. Later will have another array in the state that compares itself to this array below and render according to what is missing.
         currentReservation: [],
-        availableTime: ["12:00 PM", "12:30 PM", "1:00 PM", "1:30 PM", "2:00 PM", "2:30 PM", "3:00 PM", "3:30 PM", "4:00 PM", "4:30 PM", "5:00 PM", "5:30 PM", "6:00 PM", "6:30 PM", "7:00 PM", "7:30 PM", "8:00 PM", "8:30 PM", "9:00 PM"]
+        availableTime: []
     }
 
     componentDidMount() {
         const stateChanger = this;
-        let availableTimeArr = this.state.availableTime;
+        let availableTimeArr = ["12:00 PM", "12:30 PM", "1:00 PM", "1:30 PM", "2:00 PM", "2:30 PM", "3:00 PM", "3:30 PM", "4:00 PM", "4:30 PM", "5:00 PM", "5:30 PM", "6:00 PM", "6:30 PM", "7:00 PM", "7:30 PM", "8:00 PM", "8:30 PM", "9:00 PM"];
         axios.get('/api/allreservations').then(function (results) {
             let data = results.data;
             let currentReservation = [];
