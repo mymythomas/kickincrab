@@ -1,65 +1,103 @@
 import React from 'react';
-import {
-    Redirect,
-    withRouter
-  } from 'react-router-dom'
 
-// Dummy object to mock our authentication service
-// Do we need this both in the app.js and in login.js page?
-const fakeAuth = {
-    isAuthenticated: false,
-    authenticate(cb) {
-      this.isAuthenticated = true
-      setTimeout(cb, 100)
-    },
-    signout(cb) {
-      this.isAuthenticated = false
-      setTimeout(cb, 100)
-    }
-  }
+import { userService } from '../components/_services';
 
-  // This is the authentication 'button'
-  const AuthButton = withRouter(({ history }) => (
-    fakeAuth.isAuthenticated ? (
-      <p>
-        Welcome! <button onClick={() => {
-          fakeAuth.signout(() => history.push('/'))
-        }}>Sign out</button>
-      </p>
-    ) : (
-        <p>You are not logged in.</p>
-      )
-  ))
+class LoginPage extends React.Component {
+    constructor(props) {
+        super(props);
 
-// The login process
-class Login extends React.Component {
-    state = {
-      redirectToReferrer: false
+        userService.logout();
+
+        this.state = {
+            username: '',
+            password: '',
+            submitted: false,
+            error: ''
+        };
+
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
-    login = () => {
-      fakeAuth.authenticate(() => {
-        this.setState(() => ({
-          redirectToReferrer: true
-        }))
-      })
+
+    handleChange(e) {
+        const { name, value } = e.target;
+        this.setState({ [name]: value });
     }
-    
+
+    handleSubmit(e) {
+        e.preventDefault();
+
+        this.setState({
+            submitted: true
+        });
+
+        // stop here if form is invalid
+        if (!(this.state.username && this.state.password)) {
+            return;
+        }
+
+
+        userService.login(this.state.username, this.state.password)
+            .then(
+                user => {
+                    const { from } = this.props.location.state || { from: { pathname: "/employer" } };
+                    this.props.history.push(from);
+                },
+                error => this.setState({
+                    error,
+                    loading: false
+                })
+            );
+    }
+
     render() {
-      const { from } = this.props.location.state || { from: { pathname: '/' } }
-      const { redirectToReferrer } = this.state
-  
-      if (redirectToReferrer === true) {
-        return <Redirect to={from} />
-      }
-  
-      return (
-        <div>
-            <AuthButton />
-          <p>You must log in to view the page</p>
-          <button onClick={this.login}>Log in</button>
-        </div>
-      )
-    }
-  }
+        return (
+            <div>
+                <h2>Login</h2>
+                <form name="form" onSubmit={this.handleSubmit}>
+                    {this.state.submitted && !this.state.username &&
+                        <div className={'alert alert-danger'}>Username is required</div>
+                    }
+                    {this.state.submitted && !this.state.password &&
+                        <div className={'alert alert-danger'}>Password is required</div>
+                    }
 
-  export default Login;
+
+                    <div className='form-group'>
+                        <label htmlFor="username">Username</label>
+                        <input
+                            type="text"
+                            className="form-control"
+                            name="username"
+                            placeholder="Enter Username Here"
+                            value={this.state.username}
+                            onChange={this.handleChange}
+                        />
+                    </div>
+
+                    <div className='form-group'>
+                        <label htmlFor="password">Password</label>
+                        <input
+                            type="password"
+                            className="form-control"
+                            name="password"
+                            placeholder="Enter Password Here"
+                            value={this.state.password}
+                            onChange={this.handleChange}
+                        />
+                    </div>
+
+                    <div className="form-group">
+                        <button className="btn btn-primary">Login</button>
+                    </div>
+                    {this.state.error &&
+                        <div className={'alert alert-danger'}>{this.state.error}</div>
+                    }
+
+                </form>
+            </div>
+        );
+    }
+}
+
+export default LoginPage;

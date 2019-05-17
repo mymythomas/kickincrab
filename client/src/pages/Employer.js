@@ -1,18 +1,36 @@
 import React from 'react';
-import FormPage from '../components/Form';
-import EmployerPage from '../components/EmployerPage';
+import EmployerPage from './../components/EmployerPage'
 
+import { userService } from '../components/_services';
 
-function Employer() {
+class Employer extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            user: {},
+            users: []
+        };
+    }
+
+    componentDidMount() {
+        this.setState({ 
+            user: JSON.parse(localStorage.getItem('user')),
+            users: { loading: true }
+        });
+        userService.getAll().then(users => this.setState({ users }));
+    }
+
+    render() {
         return (
             <div>
-                <h1>Employer</h1>
-                <p>
-                <FormPage />
+                <a class="btn btn-primary" href="/login" role="button">Logout</a>
+                <h1>Welcome Back {this.state.user.firstName},</h1>
+                <p>Here is a list of reservation for {Date()}.</p>
                 <EmployerPage />
-                </p>
             </div>
-        )
+        );
+    }
 }
 
 export default Employer;

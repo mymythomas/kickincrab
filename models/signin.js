@@ -1,19 +1,30 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+const bcrypt = require('bcrypt');
 
-const signinSchema = new Schema({
-  email: { 
+
+const UserSchema = new Schema({
+  username: { 
       type: String, 
-      required: true, 
-      unique: true 
+      default: ''
     },
   password: { 
       type: String, 
-      required: true 
-    }
+      default: ''
+    },
+    isDeleted: {
+      type: Boolean,
+      default: false
+    },
 });
 
-const Signin = mongoose.model('Signin', signinSchema)
+UserSchema.methods.generateHash = function(password) {
+  return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
+};
+UserSchema.methods.validPassword = function(password) {
+  return bcrypt.compareSync(password, this.password);
+};
 
-module.exports = Signin;
+const User = mongoose.model('users', UserSchema)
+module.exports = User;
