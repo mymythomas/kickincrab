@@ -1,21 +1,36 @@
 import React from 'react';
+import EmployerPage from './../components/EmployerPage'
 
-function Employer() {
-    return (
-        <div>
-            <h1>Employer</h1>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque velit, lobortis ut magna
-            varius, blandit rhoncus sem. Morbi lacinia nisi ac dui fermentum, sed luctus urna tincidunt.
-            Etiam ut feugiat ex. Cras non risus mi. Curabitur mattis rutrum ipsum, ut aliquet urna
-            imperdiet ac. Sed nec nulla aliquam, bibendum odio eget, vestibulum tortor. Cras rutrum
-            ligula in tincidunt commodo. Morbi sit amet mollis orci, in tristique ex. Donec nec ornare
-            elit. Donec blandit est sed risus feugiat porttitor. Vestibulum molestie hendrerit massa non
-            consequat. Vestibulum vitae lorem tortor. In elementum ultricies tempus. Interdum et
-            malesuada fames ac ante ipsum primis in faucibus.
-            </p>
-        </div>
-    )
+import { userService } from '../components/_services';
+
+class Employer extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            user: {},
+            users: []
+        };
+    }
+
+    componentDidMount() {
+        this.setState({ 
+            user: JSON.parse(localStorage.getItem('user')),
+            users: { loading: true }
+        });
+        userService.getAll().then(users => this.setState({ users }));
+    }
+
+    render() {
+        return (
+            <div>
+                <a class="btn btn-primary" href="/login" role="button">Logout</a>
+                <h1>Welcome Back {this.state.user.firstName},</h1>
+                <p>Here is a list of reservation for {Date()}.</p>
+                <EmployerPage />
+            </div>
+        );
+    }
 }
 
 export default Employer;
