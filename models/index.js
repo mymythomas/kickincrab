@@ -1,4 +1,4 @@
 module.exports = {
-    Reservation: require("./reservation")
-  };
-  
+  Reservation: require("./reservation"),
+  User: require('./signin')
+};

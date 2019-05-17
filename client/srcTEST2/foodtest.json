@@ -1,0 +1,156 @@
+[
+    {
+        "id": 1,
+        "type": "starters",
+        "name": "Dozen Raw Oysters",
+        "price": "MARKET PRICE",
+        "description": "Freshly shucked oysters served with cocktail sauce, tabasco, and lime wedges."
+    },
+    {
+        "id": 2,
+        "type": "starters",
+        "name": "Half-Dozen Raw Oysters",
+        "price": "MARKET PRICE",
+        "description": "Freshly shucked oysters served with cocktail sauce, tabasco, and lime wedges."
+    },
+    {
+        "id": 3,
+        "type": "starters",
+        "name": "Fried Oysters",
+        "price": "12.99",
+        "description": "Cajun seasoning, served with cocktail sauce."
+    },
+    {
+        "id": 4,
+        "type": "starters",
+        "name": "Kickin' Wings",
+        "price": "8.99",
+        "description": "(6 pieces) Crispy fried chicken wings coated with garlic butter and our dry Cajun rub."
+    },
+    {
+        "id": 5,
+        "type": "starters",
+        "name": "Fish n' Fries",
+        "price": "11.99",
+        "description": "(5 pieces) Crispy battered white fish served with tartar sauce and Cajun fries."
+    },
+    {
+        "id": 6,
+        "type": "starters",
+        "name": "Shrimp Crisps n' Fries",
+        "price": "11.49",
+        "description": "(6 pieces) Whole shrimp wrapped in wonton, fried, and served with Cajun fries."
+    },
+    {
+        "id": 7,
+        "type": "starters",
+        "name": "Popcorn Shrimp n’ Fries",
+        "price": "11.49",
+        "description": "(12 pieces) Fried shrimp, cajun fries, served with cocktail sauce."
+    },
+    {
+        "id": 8,
+        "type": "starters",
+        "name": "Cajun Edamame",
+        "price": "6.99",
+        "description": "steamed whole soybeans tossed in our house garlic lemon pepper sauce (served mild, medium or spicy)."
+    },
+    {
+        "id": 9,
+        "type": "starters",
+        "name": "Cajun Fries",
+        "price": "4.75",
+        "description": "crispy fries tossed in Cajun seasoning."
+    },
+    {
+        "id": 10,
+        "type": "starters",
+        "name": "Sweet Potato Fries",
+        "price": "5.75",
+        "description": "fried and served with buttercream."
+    },
+    {
+        "id": 11,
+        "type": "starters",
+        "name": "Fried Calamari",
+        "price": "11.25",
+        "description": "thinly sliced battered calamari, fried and coated with Cajun seasoning; served with cocktail sauce."
+    },
+    {
+        "id": 12,
+        "type": "starters",
+        "name": "Fried Fish Tacos",
+        "price": "8.49",
+        "description": "(3 per order) crispy battered white fish served on corn tortillas and topped with pico de gallo."
+    },
+    {
+        "id": 13,
+        "type": "starters",
+        "name": "Grilled Shrimp Tacos",
+        "price": "8.99",
+        "description": "(3 per order) Cajun marinated grilled shrimp served on corn tortillas and topped with pico de gallo."
+    },
+    {
+        "id": 14,
+        "type": "starters",
+        "name": "Shrimp Bites",
+        "price": "11.99",
+        "description": "(6 bites) Cajun marinated grilled shrimp served on tortilla scoop chips topped with pico de gallo, sour cream, and sriracha."
+    },
+    {
+        "id": 15,
+        "type": "starters",
+        "name": "Coconut Sea Snails",
+        "price": "11.25",
+        "description": "Wild caught baby snails, coriander, lemongrass, coconut cream."
+    },
+    {
+        "id": 16,
+        "type": "starters",
+        "name": "Garlic Noodles",
+        "price": "10.99",
+        "description": "Sautéed in garlic butter."
+    },
+    {
+        "id": 17,
+        "type": "soups",
+        "name": "Kickin' Chowder",
+        "price": "7.25",
+        "description": "baby clams, potato, white-cream based chowder, served with oyster crackers."
+    },
+    {
+        "id": 18,
+        "type": "soups",
+        "name": "KC Gumbo",
+        "price": "6.75",
+        "description": "chicken-pork sausages, shrimp, corn, celery, okra, tomato, bell peppers (served with or without rice; mild or spicy)."
+    },
+    {
+        "id": 19,
+        "type": "plates",
+        "name": "Seafood Scampi",
+        "price": "15.99",
+        "description": "scallops, shrimp, clams, and mussels in a creamy garlic white wine sauce; served with pita bread."
+    },
+    {
+        "id": 20,
+        "type": "plates",
+        "name": "Seafood Alfredo Pasta",
+        "price": "15.99",
+        "description": "Thin fettuccine with scallops, shrimp, clams and mussels in creamy alfredo sauce."
+    },
+    {
+        "id": 21,
+        "type": "plates",
+        "name": "KC Tilapia",
+        "price": "13.25",
+        "description": "topped with Cajun garlic butter; served with red rice and steamed broccoli."
+    },
+    {
+        "id": 22,
+        "type": "plates",
+        "name": "KC Trout",
+        "price": "13.99",
+        "description": "topped with Cajun garlic butter; served with red rice and steamed broccoli."
+    }
+]
