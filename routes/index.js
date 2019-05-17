@@ -1,6 +1,7 @@
 const path = require("path");
 const router = require("express").Router();
 const apiRoutes = require("./api");
+const db = require("../models");
 
 // Sets up the email to be used to send reservation email Please no steal my PW Mymy :(
 var nodemailer = require('nodemailer');
@@ -39,6 +40,8 @@ router.post("/api/reservation", function (req, res) {
         subject: 'Your Reservation to Kickin\' Crab!',
         html: message
     });
+});
+
 // API Routes
 router.use("/api", apiRoutes);
 
