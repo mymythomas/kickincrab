@@ -4,7 +4,7 @@ import FoodCard from '../../components/FoodCard';
 
 function Starters () {
     return (
-        <div>
+        <div className="col-6">
             <h1>Starters</h1>
 
             {foods[0].items.map((item, index) => (

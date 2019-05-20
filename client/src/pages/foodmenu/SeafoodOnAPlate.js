@@ -5,7 +5,8 @@ import FoodCard from '../../components/FoodCard';
 function SeafoodOnAPlate () {
     return (
         <div>
-            <h1>Sides</h1>
+            <br /><br />
+            <h1>Seafood On A Plate</h1>
 
             {foods[2].items.map((item, index) => (
                 <div key={index}>
