@@ -1,0 +1,40 @@
+.nav-link {
+      color: #fff9a8;
+      background-color:#b52f2f;
+}
+
+.nav {
+    width: 30%;
+    padding: 0px;
+}
+
+.nav-item {
+    font-family: 'Baloo Bhai', cursive;
+    padding: 5px 5px 5px 5px;
+    margin: auto;
+    width: 125px;
+    text-align: center;
+}
+  
+  @media only screen and (max-width: 800px) {
+    .nav {
+        width: 100%;
+        padding: 0px;
+    }
+    .nav-item {
+        font-family: 'Baloo Bhai', cursive;
+        padding: 2px 2px 2px 2px;
+        margin: auto;
+        width: 125px;
+        text-align: center;
+      }
+  }
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: #fff;
+    background-color: #cc3f3f;
+}
+
+a:hover {
+    color: white;
+  }
