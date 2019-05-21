@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 // withRouter is so we can push states
 import { withRouter } from 'react-router-dom'
-
 import { Nav } from 'react-bootstrap';
 
 
@@ -11,19 +10,18 @@ class Navbar extends Component {
 
     render() {
         return (
-
-            <ul class="nav nav-pills">
-                <li class="nav-item">
-                    <Nav.Link href="/">Home</Nav.Link>
+            <ul className="container nav nav-pills">
+                <li className="nav-item">
+                    <Nav.Link className={window.location.pathname === "/" ? "active" : ""} href="/">Home</Nav.Link>
                 </li>
-                <li class="nav-item">
-                    <Nav.Link href="/menu">Menu</Nav.Link>
+                <li className="nav-item">
+                    <Nav.Link className={window.location.pathname === "/menu" ? "active" : ""} href="/menu">Menu</Nav.Link>
                 </li>
-                <li class="nav-item">
-                    <Nav.Link href="/locations">Locations</Nav.Link>
+                <li className="nav-item">
+                    <Nav.Link className={window.location.pathname === "/locations" ? "active" : ""} href="/locations">Locations</Nav.Link>
                 </li>
-                <li class="nav-item">
-                    <Nav.Link href="/customer">Customer</Nav.Link>
+                <li className="nav-item">
+                    <Nav.Link className={window.location.pathname === "/customer" ? "active" : ""} href="/customer">Customer</Nav.Link>
                 </li>
             </ul>
 

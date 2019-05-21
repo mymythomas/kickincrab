@@ -20,7 +20,7 @@ function App () {
         <div>
           <Header />
           <Navbar />
-          <div className="container">
+          <div style={{padding: "0 0 0 0", margin: "0 0 0 0"}} className="container">
             <Switch>
               <Route exact path="/" component={Home} />
               <Route path="/menu" component={Menu} />
