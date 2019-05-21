@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 // withRouter is so we can push states
 import { withRouter } from 'react-router-dom'
-
 import { Nav } from 'react-bootstrap';
 
 
