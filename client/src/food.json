@@ -1,14 +1,9 @@
 [
     {
-        "type": "starters",
+        "type": "Starters",
         "items": [
             {
-                "name": "Dozen Raw Oysters",
-                "price": false,
-                "description": "Freshly shucked oysters served with cocktail sauce, tabasco, and lime wedges."
-            },
-            {
-                "name": "Half-Dozen Raw Oysters",
+                "name": "Raw Oysters",
                 "price": false,
                 "description": "Freshly shucked oysters served with cocktail sauce, tabasco, and lime wedges."
             },
@@ -28,7 +23,6 @@
                 "description": "(5 pieces) Crispy battered white fish served with tartar sauce and Cajun fries."
             },
             {
-                "type": "starters",
                 "name": "Shrimp Crisps n' Fries",
                 "price": 11.49,
                 "description": "(6 pieces) Whole shrimp wrapped in wonton, fried, and served with Cajun fries."
@@ -69,11 +63,6 @@
                 "description": "(3 per order) Cajun marinated grilled shrimp served on corn tortillas and topped with pico de gallo."
             },
             {
-                "name": "Shrimp Bites",
-                "price": 11.99,
-                "description": "(6 bites) Cajun marinated grilled shrimp served on tortilla scoop chips topped with pico de gallo, sour cream, and sriracha."
-            },
-            {
                 "name": "Coconut Sea Snails",
                 "price": 11.25,
                 "description": "Wild caught baby snails, coriander, lemongrass, coconut cream."
@@ -86,7 +75,7 @@
         ]
     },
     {
-        "type": "soups",
+        "type": "Soups",
         "items": [
             {
                 "name": "Kickin' Chowder",
@@ -101,7 +90,7 @@
         ]
     },
     {
-        "type": "plates",
+        "type": "Plates",
         "items": [
             {
                 "name": "Seafood Scampi",
@@ -126,7 +115,7 @@
         ]
     },
     {
-        "type": "sides",
+        "type": "Sides",
         "items": [
             {
                 "name": "Steamed Broccolli",
@@ -147,6 +136,122 @@
                 "name": "Pita Bread",
                 "price": 4.99,
                 "description": "(8 slices) grilled Greek flatbread topped with garlic butter."
+            }
+        ]
+    },
+    {
+        "type": "Dessert",
+        "items": [
+            {
+                "name": "Cheesecake",
+                "price": 6.49,
+                "description": "steamed broccolli."
+            }
+        ]
+    },
+    {
+        "type": "Seafood",
+        "items": [
+            {
+                "name": "Shrimp",
+                "price": false,
+                "description": "Ecuador, South America"
+            },
+            {
+                "name": "Mussels",
+                "price": false,
+                "description": "New Zealand"
+            },
+            {
+                "name": "Clams",
+                "price": false,
+                "description": "Washington, North America"
+            },
+            {
+                "name": "Snow Crab Legs",
+                "price": false,
+                "description": "Russia"
+            },
+            {
+                "name": "King Crab Legs",
+                "price": false,
+                "description": "Russia"
+            },
+            {
+                "name": "Dungeness Crab",
+                "price": false,
+                "description": "Cananda, North America"
+            },
+            {
+                "name": "Lobster",
+                "price": false,
+                "description": "Maine, North America"
+            },
+            {
+                "name": "Crawfish",
+                "price": false,
+                "description": "Louisianna, North America"
+            }
+        ]
+    },
+    {
+        "type": "Sides",
+        "items": [
+            {
+                "name": "Corn w/o seasoning (1 piece)",
+                "price": 1.65
+            },
+            {
+                "name": "Corn w/ seasoning (3 pieces)",
+                "price": 3.75
+            },
+            {
+                "name": "Potatoes (3 pieces)",
+                "price": 2.99
+            },
+            {
+                "name": "Sausages (6 pieces)",
+                "price": 4.75
+            }
+        ]
+    },
+    {
+        "type": "Sauce",
+        "flavors": [
+            {
+                "name": "Garlic Butter",
+                "description": "Non-Spicy Only"
+            },
+            {
+                "name": "Cajun",
+                "description": "Savory"
+            },
+            {
+                "name": "Lemon Pepper",
+                "description": "Tangy"
+            },
+            {
+                "name": "Lousianna",
+                "description": "Sweet & Buttery"
+            },
+            {
+                "name": "Kickin' Crab",
+                "description": "(All The Above)"
+            },
+            {
+                "name": "KC Fiesta",
+                "description": "Tangy, Savory, & flavorsome"
+            }
+        ]
+    },
+    {
+        "type": "Combo",
+        "items": [
+            {
+                "name": "Combo",
+                "premium": "Dungeness Crab (1.5 lb), King Crab Legs (1 lb), Snow Crab Legs (1 lb), Lobster (1.5 lb)",
+                "seafood": "Shrimp (1 lb), Clams (1 lb), Mussels (1 lb), Crawfish (1 lb)",
+                "includes": "2 corn, 2 potatoes, 4 sausages"
             }
         ]
     }
