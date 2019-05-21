@@ -1,21 +1,50 @@
 import React from 'react';
+import foods from '../../food.json';
+import FoodCard from '../../components/FoodCard';
+import FoodCardSauce from '../../components/FoodCard/sauce';
 
-function SeafoodInABag () {
+function SeafoodInABag() {
     return (
-        <div>
-            <h1>Seafood In A Bag</h1>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque velit, lobortis ut magna
-            varius, blandit rhoncus sem. Morbi lacinia nisi ac dui fermentum, sed luctus urna tincidunt.
-            Etiam ut feugiat ex. Cras non risus mi. Curabitur mattis rutrum ipsum, ut aliquet urna
-            imperdiet ac. Sed nec nulla aliquam, bibendum odio eget, vestibulum tortor. Cras rutrum
-            ligula in tincidunt commodo. Morbi sit amet mollis orci, in tristique ex. Donec nec ornare
-            elit. Donec blandit est sed risus feugiat porttitor. Vestibulum molestie hendrerit massa non
-            consequat. Vestibulum vitae lorem tortor. In elementum ultricies tempus. Interdum et
-            malesuada fames ac ante ipsum primis in faucibus.
-            </p>
+        <div className="row">
+
+            <div className="col-6">
+                <h3 className="menu-header">{foods[5].type}</h3>
+                {foods[5].items.map((item, index) => (
+                    <div key={index}>
+                        <FoodCard
+                            name={item.name}
+                            price={item.price}
+                        // description={item.description}
+                        />
+                    </div>
+                ))}
+            </div>
+
+            <div className="col-6">
+                <h3 className="menu-header">{foods[7].type}</h3>
+                {foods[7].flavors.map((flavor, index) => (
+                    <div key={index}>
+                        <FoodCardSauce
+                            name={flavor.name}
+                            description={flavor.description}
+                        />
+                    </div>
+                ))}
+
+                <br /><br />
+
+                <h3 className="menu-header">{foods[6].type}</h3>
+                {foods[6].items.map((item, index) => (
+                    <div key={index}>
+                        <FoodCard
+                            name={item.name}
+                            price={item.price}
+                        />
+                        </div>
+                ))}
+            </div>
         </div>
-    )
+    );
 }
 
 export default SeafoodInABag;

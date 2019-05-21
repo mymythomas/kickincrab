@@ -2,17 +2,15 @@ import React from 'react';
 import foods from '../../food.json';
 import FoodCard from '../../components/FoodCard';
 
-function SeafoodOnAPlate () {
+function SidesInABag() {
     return (
         <div>
-            <h2 className="menu-header">Seafood On A Plate</h2>
-
-            {foods[2].items.map((item, index) => (
+            <h1 className="menu-header">{foods[6].type}</h1>
+            {foods[6].items.map((item, index) => (
                 <div key={index}>
                     <FoodCard
                         name={item.name}
                         price={item.price}
-                        description={item.description}
                     />
                 </div>
             ))}
@@ -20,4 +18,4 @@ function SeafoodOnAPlate () {
     );
 }
 
-export default SeafoodOnAPlate;
+export default SidesInABag;
