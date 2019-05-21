@@ -6,7 +6,7 @@ import React from 'react';
 import Home from './pages/Home';
 import Menu from './pages/Menu';
 import Locations from './pages/Locations';
-import Customer from './pages/Customer';
+import Reservation from './pages/Reservation';
 import Employer from './pages/Employer';
 import Login from './pages/Login';
 
@@ -29,7 +29,7 @@ function App () {
               <Route path="/menu" component={Menu} />
               <Route exact path="/locations" component={Locations} />
               <PrivateRoute exact path="/employer" component={Employer} />
-              <Route exact path="/customer" component={Customer} />
+              <Route exact path="/reservation" component={Reservation} />
               <Route exact path="/login" component={Login} />
               <Route path="*" component={() => "404 PAGE NOT FOUND"} />
             </Switch>
