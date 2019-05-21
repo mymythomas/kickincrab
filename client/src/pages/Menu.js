@@ -12,7 +12,7 @@ import "./style.css";
 
 function Menu() {
     return (
-        <div>
+        <div style={{padding: "20px"}}>
             <div className="row">
                 <Starters />
                 <div className="col-6">
@@ -23,20 +23,6 @@ function Menu() {
                 </div> 
             </div> < br />< br />
             <hr />
-            {/* <div className="row">
-                <SeafoodInABag />
-
-                <div className="col-4">
-                    <SauceInABag />
-                </div>
-
-                <div className="col-4">
-                    <SidesInABag />
-                </div>
-
-            </div> < br />< br />
-
-            <ComboInABag /> */}
             <h1 className="menu-header text-center">Seafood In A Bag</h1> <br />
             <SeafoodInABag />
             <h1 className="menu-header text-center">Combo In A Bag</h1> <br />
