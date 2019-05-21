@@ -21,7 +21,7 @@ class Navbar extends Component {
                     <Nav.Link className={window.location.pathname === "/locations" ? "active" : ""} href="/locations">Locations</Nav.Link>
                 </li>
                 <li className="nav-item">
-                    <Nav.Link className={window.location.pathname === "/customer" ? "active" : ""} href="/customer">Customer</Nav.Link>
+                    <Nav.Link className={window.location.pathname === "/reservation" ? "active" : ""} href="/reservation">Reservation</Nav.Link>
                 </li>
             </ul>
 
