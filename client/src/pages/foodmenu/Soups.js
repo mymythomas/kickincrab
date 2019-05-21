@@ -5,7 +5,7 @@ import FoodCard from '../../components/FoodCard';
 function Soups () {
     return (
         <div>
-            <h1>Soups</h1>
+            <h2 className="menu-header">{foods[1].type}</h2>
 
             {foods[1].items.map((item, index) => (
                 <div key={index}>
