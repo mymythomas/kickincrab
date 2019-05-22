@@ -33,8 +33,7 @@ export function configureFakeBackend() {
                             lastName: user.lastName
                         };
                         resolve({
-                            ok: true, text: () => Promise.resolve
-                                (JSON.stringify(responseJson))
+                            ok: true, text: () => Promise.resolve(JSON.stringify(responseJson))
                         });
                     } else {
                         // else return error

@@ -2,28 +2,32 @@ import React from "react";
 import { Table } from 'react-bootstrap';
 
 function EmployerPage(props) {
-    // console.log(props && props.reservations && props.reservations[0] && props.reservations[0].name)
 
-    console.log(props)
-    console.log(props.reservations)
-
-    console.log(props.reservations[0])
-    // console.log(props.reservations[0].name) //undefined
+    const reservationTime = props.reservations.map(data => {
+        return (<tr key={data.reservationTime}>
+            <td>{data.name}</td>
+            <td>{data.reservationTime}</td>
+            <td>{data.numInParty}</td>
+            <td>{data.email}</td>
+            <td><div class="deleteReserve" onClick={props.delete(data.reservationTime)}>X</div></td>
+        </tr>)
+    })
 
     return (
         <div>
             <Table striped bordered hover>
                 <thead>
                     <tr>
-                        <th>#</th>
                         <th>Name</th>
                         <th>Time</th>
                         <th>Party Size</th>
                         <th>Email</th>
+                        <th>Remove Party</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                    {reservationTime}
+                    {/* <tr>
                         <td>1</td>
                         <td>Mark</td>
                         <td>3:00 PM</td>
@@ -50,7 +54,7 @@ function EmployerPage(props) {
                         <td>9:45 PM</td>
                         <td>1</td>
                         <td>Mymy@Mymy.com</td>
-                    </tr>
+                    </tr> */}
                 </tbody>
             </Table>;
         </div>

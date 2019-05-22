@@ -14,8 +14,15 @@ var transporter = nodemailer.createTransport({
 });
 
 router.get("/api/allreservations", function (req, res) {
-    db.Reservation.find({}).then(function (data) {
+    db.Reservation.find({}, null, {sort: {reservationTime: 1}}).then(function (data) {
         res.json(data);
+    })
+})
+
+router.delete("/api/delete", function (req, res) {
+    console.log(req.query);
+    db.Reservation.findOneAndRemove({reservationTime: req.query.reservationTime}).then(function (data) {
+        res.end();
     })
 })
 
@@ -24,7 +31,8 @@ router.post("/api/reservation", function (req, res) {
         name: req.body.name,
         reservationTime: req.body.reservationTime,
         cellNum: req.body.phoneNum,
-        email: req.body.email
+        email: req.body.email,
+        numInParty: req.body.numInParty
     }).then(function (data) {
         res.end();
     });
