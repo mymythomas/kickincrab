@@ -89,7 +89,7 @@ a:hover {
     height: 50px;
 }
 
-.availtimeBtnActive {
+.availtimeBtnActive, .submit-btn {
     background-color: #cc3f3f;
     color: white;
 }
@@ -120,4 +120,9 @@ a:hover {
 .takenTime {
     background-color: #b52f2f;
     opacity: .5;
+}
+
+.titleHeader {
+    font-family: 'Economica', sans-serif; 
+    font-weight: bold;
 }
