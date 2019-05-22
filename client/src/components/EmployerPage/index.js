@@ -1,13 +1,17 @@
 import React from "react";
 import { Table } from 'react-bootstrap';
 
-function EmployerPage({reservations}) {
-    // if (reservations[0].name === undefined) {
-    //     console.log(reservations);
-    // }
+function EmployerPage(props) {
+    // console.log(props && props.reservations && props.reservations[0] && props.reservations[0].name)
+
+    console.log(props)
+    console.log(props.reservations)
+
+    console.log(props.reservations[0])
+    // console.log(props.reservations[0].name) //undefined
+
     return (
         <div>
-            <h1>{reservations.name}</h1>
             <Table striped bordered hover>
                 <thead>
                     <tr>

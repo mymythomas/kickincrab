@@ -14,14 +14,17 @@ class Employer extends React.Component {
         };
     }
     
-
-    componentDidMount = () => {
+    componentWillMount = () => {
         axios.get('/api/allreservations').then(results => {
             this.setState({
                 currentReservations: results.data
             })
             console.log(this.state.currentReservations)
         })
+
+    }
+
+    componentDidMount = () => {
 
         this.setState({ 
             user: JSON.parse(localStorage.getItem('user')),
