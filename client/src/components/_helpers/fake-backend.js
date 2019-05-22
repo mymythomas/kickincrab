@@ -5,7 +5,14 @@ export function configureFakeBackend() {
         password: 'test',
         firstName: "KC10",
         lastName: 'BP'
-    }];
+    }, {
+        id: 2,
+        username: 'taco',
+        password: 'taco',
+        firstName: 'Taco',
+        lastName: 'Man'
+    }
+];
     let realFetch = window.fetch;
 
     window.fetch = function (url, opts) {
