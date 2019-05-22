@@ -32,6 +32,19 @@ body {
     text-align: center;
 }
 
+.badge {
+    font-size: 100%;
+    width: 378px;
+}
+
+.form-control, .form-control::selection{
+    border: 0;
+    background-color:transparent;
+    height: 50px;
+    border-bottom: 1px solid #C0C0C0;
+    margin: 5px;
+}
+
 .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
     color: #fff;
     background-color: #cc3f3f;
