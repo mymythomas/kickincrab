@@ -32,6 +32,20 @@ body {
     text-align: center;
 }
 
+.badge {
+    font-size: 100%;
+    width: 378px;
+}
+
+.form-control, .form-control::selection{
+    border: 0;
+    background-color:transparent;
+    height: 50px;
+    border-bottom: 1px solid #C0C0C0;
+    margin: 5px;
+}
+
+
 /* Changing BootStrap default to fit our needs */
 @media (min-width: 1200px) {
     .container {
