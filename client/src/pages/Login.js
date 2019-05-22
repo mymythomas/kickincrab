@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Card, Badge, InputGroup } from 'react-bootstrap';
 import { userService } from '../components/_services';
 
 class LoginPage extends React.Component {
@@ -52,49 +52,80 @@ class LoginPage extends React.Component {
 
     render() {
         return (
-            <div>
-                <h2>Login</h2>
-                <form name="form" onSubmit={this.handleSubmit}>
-                    {this.state.submitted && !this.state.username &&
-                        <div className={'alert alert-danger'}>Username is required</div>
-                    }
-                    {this.state.submitted && !this.state.password &&
-                        <div className={'alert alert-danger'}>Password is required</div>
-                    }
+            <div style={{ padding: "20px" }}>
+                <div className="row">
+                    <div className="col-5">
+                        <Card bg="light" style={{ width: '25rem' }}>
+                            <h1 style={{ position: "relative", left: "10px", top: "-25px" }}><Badge variant="dark"><i class="fas fa-user-lock"></i> Login</Badge></h1>
+                            <Card.Body>
+
+                                <form name="form" onSubmit={this.handleSubmit}>
 
 
-                    <div className='form-group'>
-                        <label htmlFor="username">Username</label>
-                        <input
-                            type="text"
-                            className="form-control"
-                            name="username"
-                            placeholder="Enter Username Here"
-                            value={this.state.username}
-                            onChange={this.handleChange}
-                        />
+                                    <InputGroup>
+                                        <InputGroup.Prepend>
+                                            <h2><i className="far fa-envelope">: </i></h2>
+                                        </InputGroup.Prepend>
+
+                                        <input
+                                            type="text"
+                                            className="form-control"
+                                            name="username"
+                                            placeholder="Enter Username Here"
+                                            value={this.state.username}
+                                            onChange={this.handleChange}
+                                        />
+                                    </InputGroup> <br />
+
+                                    <InputGroup>
+                                        <InputGroup.Prepend>
+                                            <h2><i class="fas fa-lock"> </i></h2>
+                                        </InputGroup.Prepend>
+
+                                        <input
+                                            type="password"
+                                            className="form-control"
+                                            name="password"
+                                            placeholder="Enter Password Here"
+                                            value={this.state.password}
+                                            onChange={this.handleChange}
+                                        />
+                                    </InputGroup> <br />
+
+                                    <InputGroup>
+                                        <button className="btn btn-dark">Login</button>
+                                    </InputGroup>
+
+                                </form>
+
+                            </Card.Body>
+                        </Card>
+
                     </div>
 
-                    <div className='form-group'>
-                        <label htmlFor="password">Password</label>
-                        <input
-                            type="password"
-                            className="form-control"
-                            name="password"
-                            placeholder="Enter Password Here"
-                            value={this.state.password}
-                            onChange={this.handleChange}
-                        />
+                    <div className="col-7">
+
+                        <div className="alerts" style={{ padding: "20px" }}>
+                            {this.state.submitted && !this.state.username &&
+                                <div className={'alert alert-danger'}>Username is required</div>
+                            }
+                            {this.state.submitted && !this.state.password &&
+                                <div className={'alert alert-danger'}>Password is required</div>
+                            }
+
+                            {this.state.error &&
+                                <div className={'alert alert-danger'}>{this.state.error}</div>
+                            }
+
+                        </div>
+
+
                     </div>
 
-                    <div className="form-group">
-                        <button className="btn btn-primary">Login</button>
-                    </div>
-                    {this.state.error &&
-                        <div className={'alert alert-danger'}>{this.state.error}</div>
-                    }
 
-                </form>
+
+                </div>
+
             </div>
         );
     }
