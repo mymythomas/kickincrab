@@ -1,9 +1,13 @@
 import React from "react";
 import { Table } from 'react-bootstrap';
 
-function EmployerPage() {
+function EmployerPage({reservations}) {
+    // if (reservations[0].name === undefined) {
+    //     console.log(reservations);
+    // }
     return (
         <div>
+            <h1>{reservations.name}</h1>
             <Table striped bordered hover>
                 <thead>
                     <tr>

@@ -10,7 +10,7 @@ function Footer() {
                 <span>© Copyright 2019 TheKickinCrab.com | All Rights Reserved.</span>
                 <br />
 
-                <Button href="/employer"><i class="fas fa-sign-in-alt"></i> Employer Page</Button>
+                <Button href="/employer"><i className="fas fa-sign-in-alt"></i> Employer Page</Button>
             </div>
             <div className="rightfooter col-4">
             <Card>
