@@ -6,7 +6,8 @@ const reservationSchema = new Schema({
   reservationTime: { type: String, required: true },
   cellNum: { type: Number, required: true },
   madeAt: { type: Date, default: Date.now },
-  email: { type: String, required: true }
+  email: { type: String, required: true },
+  numInParty: { type: Number, required: true }
 });
 
 const Reservation = mongoose.model("Reservation", reservationSchema);

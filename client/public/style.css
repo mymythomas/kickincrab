@@ -32,42 +32,6 @@ body {
     text-align: center;
 }
 
-/* Changing BootStrap default to fit our needs */
-@media (min-width: 1200px) {
-    .container {
-        max-width: 2000px;
-    }
-}
-
-@media (min-width: 576px) {
-    .container {
-        max-width: 100%;
-    }
-}
-
-@media only screen and (max-width: 800px) {
-
-    .nav {
-        width: 100%;
-        padding: 0px;
-    }
-
-    .nav-item {
-        font-family: 'Baloo Bhai', cursive;
-        padding: 2px 2px 2px 2px;
-        margin: auto;
-        width: 125px;
-        text-align: center;
-    }
-    body {
-        background-image: none;
-    }
-
-    #whitebg {
-        width: 100%;
-    }
-}
-
 .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
     color: #fff;
     background-color: #cc3f3f;
@@ -99,12 +63,7 @@ a:hover {
     color: #fff9a8
 }
 
-#avail-time-btn {
-    margin: auto;
-}
-
-#reservation {
-    width: 40%;
+#availTimeContainer {
     margin: auto;
 }
 
@@ -125,4 +84,67 @@ a:hover {
 .titleHeader {
     font-family: 'Economica', sans-serif; 
     font-weight: bold;
+}
+
+.deleteReserve {
+    color: red;
+}
+
+.deleteReserve:hover {
+    cursor: pointer;
+}
+
+#reservation {
+    width: 40%;
+    margin: auto;
+}
+
+/* Changing BootStrap default to fit our needs */
+
+@media (min-width: 576px) {
+    .container {
+        max-width: 100%;
+    }
+}
+
+@media (min-width: 800px) {
+    #reservation {
+        width: 80%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 2000px;
+    }
+
+    #reservation {
+        width: 40%;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .nav {
+        width: 100%;
+        padding: 0px;
+    }
+
+    #reservation {
+        width: 60%;
+    }
+
+    .nav-item {
+        font-family: 'Baloo Bhai', cursive;
+        padding: 2px 2px 2px 2px;
+        margin: auto;
+        width: 125px;
+        text-align: center;
+    }
+    body {
+        background-image: none;
+    }
+
+    #whitebg {
+        width: 100%;
+    }
 }

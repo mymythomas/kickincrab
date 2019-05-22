@@ -14,6 +14,7 @@ class Reservation extends React.Component {
     }
 
     componentDidMount() {
+        // This function will map over all available time to make a reservation and add a new key value to each one to show if the time slot is taken or not after grabbing what time slow has been taken from our database.
         const stateChanger = this;
         let availableTimeArr = ["12:30 PM", "1:00 PM", "1:30 PM", "2:00 PM", "2:30 PM", "3:00 PM", "3:30 PM", "4:00 PM", "4:30 PM", "5:00 PM", "5:30 PM", "6:00 PM", "6:30 PM", "7:00 PM", "7:30 PM", "8:00 PM"];
         axios.get('/api/allreservations').then(function (results) {
@@ -34,7 +35,6 @@ class Reservation extends React.Component {
                     taken: false
                 }
             });
-            console.log(filteredArray);
             stateChanger.setState({
                 availableTime: filteredArray
             })
@@ -53,9 +53,7 @@ class Reservation extends React.Component {
         })
 
         let availableTimeArr = this.state.availableTime;
-        let currentReservation = this.state.reservationTime
-        console.log(currentReservation)
-        console.log(availableTimeArr)
+        let currentReservation = this.state.reservationTime;
         for (var i = availableTimeArr.length - 1; i >= 0; i--) {
             if (availableTimeArr[i] === currentReservation) {
                 availableTimeArr.splice(i, 1);
@@ -70,7 +68,6 @@ class Reservation extends React.Component {
             email: "",
             availableTime: availableTimeArr
         });
-        console.log(this.state.availableTime);
         window.location.reload();
     }
 
@@ -95,16 +92,7 @@ class Reservation extends React.Component {
 
     render() {
 
-        // Maps over array of available reservation time and return an array of buttons that will set state to the desired reservation time. Currently active reservation time will render green when clicked on
-        // const availableTime = this.state.availableTime.map(data => {
-        //     return (<button
-        //         className={this.state.reservationTime === data.time ? "availtimeBtnActive" : "availtimeBtn"}
-        //         key={data.time}
-        //         onClick={this.handleReservation(data)}
-        //     >
-        //         {data}</button>)
-        // })
-
+        // Maps over the availableTime array and creates a button for each available time. With each button it checks to see in the database if the timeslot is taken and provide a class category accordingly. Also it will have a different onClick method to let the user know that the reservation is taken or not.
         const availableTime = this.state.availableTime.map(data => {
             return (<button
                 className={data.taken === true ? "takenTime" : (this.state.reservationTime === data.time ? "availtimeBtnActive" : "availtimeBtn")}
@@ -134,7 +122,6 @@ class Reservation extends React.Component {
                                 className="name"
                                 type="name"
                                 name="name"
-                                placeholder="Name"
                             >
                             </input><br></br>
                         </div>
@@ -147,7 +134,7 @@ class Reservation extends React.Component {
                         </div>
 
                         <div className="centering">
-                            <strong htmlFor="numInParty"># of people in your party. (Please include children and babies as they ALSO FUCKING TAKE SPACE)</strong> <br></br>
+                            <strong htmlFor="numInParty"># of people in your party.</strong> <br></br>
                             <input
                                 type="text"
                                 maxLength="2"
