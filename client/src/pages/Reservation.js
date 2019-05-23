@@ -95,7 +95,7 @@ class Reservation extends React.Component {
         // Maps over the availableTime array and creates a button for each available time. With each button it checks to see in the database if the timeslot is taken and provide a class category accordingly. Also it will have a different onClick method to let the user know that the reservation is taken or not.
         const availableTime = this.state.availableTime.map(data => {
             return (<button
-                className={data.taken === true ? "takenTime" : (this.state.reservationTime === data.time ? "availtimeBtnActive" : "availtimeBtn")}
+                className={data.taken === true ? "takenTime btn btn-danger" : (this.state.reservationTime === data.time ? "selectedTime btn btn-danger" : "btn btn-danger")}
                 key={data.time}
                 onClick={data.taken === false ? this.handleReservation(data.time) : this.handleTakenReservation}
             >
@@ -172,7 +172,7 @@ class Reservation extends React.Component {
                         </div>
 
                         <div className="centering">
-                            <button onClick={this.handleSubmit} className="submit-btn">Submit</button>
+                            <button onClick={this.handleSubmit} className="btn btn-danger">Submit</button>
                         </div>
                     </form>
                 </div>
