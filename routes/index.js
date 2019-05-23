@@ -37,9 +37,10 @@ router.post("/api/reservation", function (req, res) {
         res.end();
     });
 
-    let message = '<p> Hello, ' + req.body.name + '!</p> <p> We have received your reservation at ' + req.body.reservationTime + '. We will send you another email once your table is ready. Please be within the area and arrive promptly when you receive your second email. To be seated your entire party must be present. The host WILL perform a headcount.</p>'
+    let message = '<img src="https://static1.squarespace.com/static/5844b5fa1b631b1c50a87a21/t/599f849037c5813e652b3186/1557219814659/?format=1500w" /> <p> Hello, ' + req.body.name + '!</p> <p> We have received your reservation at ' + req.body.reservationTime + '. We will send you another email once your table is ready. Please be within the area and arrive promptly when you receive your second email. To be seated your entire party must be present. The host WILL perform a headcount.</p>'
+    
     if (parseFloat(req.body.numInParty) >= 8) {
-        message += "<p>Notice: Because your party contains 8 or more people. Our policy states that an automatic service charge of 18% will be added to your tab. Please note as well that your tab may only be split up to three ways. Any further questions can be directed to your server.</p>"
+        message += '<p style="color: red; font-weight: bold"><u>Notice: Because your party contains 8 or more people.</u> Our policy states that an automatic service charge of 18% will be added to your tab. Please note as well that your tab may only be split up to three ways. Any further questions can be directed to your server.</p>'
     }
 
     transporter.sendMail({
