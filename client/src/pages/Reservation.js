@@ -41,9 +41,9 @@ class Reservation extends React.Component {
         })
     }
 
-    handleTakenReservation = event => {
+    handleTakenReservation = data => event => {
         event.preventDefault();
-        alert("Reservation Taken");
+        alert(data + " is taken!");
     }
 
     handleSubmit = event => {
@@ -95,9 +95,9 @@ class Reservation extends React.Component {
         // Maps over the availableTime array and creates a button for each available time. With each button it checks to see in the database if the timeslot is taken and provide a class category accordingly. Also it will have a different onClick method to let the user know that the reservation is taken or not.
         const availableTime = this.state.availableTime.map(data => {
             return (<button
-                className={data.taken === true ? "takenTime" : (this.state.reservationTime === data.time ? "availtimeBtnActive" : "availtimeBtn")}
+                className={data.taken === true ? "takenTime btn btn-danger" : (this.state.reservationTime === data.time ? "selectedTime btn btn-danger" : "btn btn-danger")}
                 key={data.time}
-                onClick={data.taken === false ? this.handleReservation(data.time) : this.handleTakenReservation}
+                onClick={data.taken === false ? this.handleReservation(data.time) : this.handleTakenReservation(data.time)}
             >
                 {data.time}</button>)
         })
@@ -107,7 +107,7 @@ class Reservation extends React.Component {
                 <div>
                     <h1 style={{ textAlign: "center" }}><strong>Make A Reservation!</strong></h1>
                     <p>
-                        Please fill out the information below to make a reservation. Please note that any parties with 8 or more people will have an automatic 18% service charge added to their bill. Please speak with your server for more information.
+                        Please fill out your information below to make a reservation. Please note that any parties with 8 or more people will have an automatic 18% service charge added to their bill. Please speak with your server for more information.
                     </p>
                 </div>
 
@@ -127,7 +127,7 @@ class Reservation extends React.Component {
                         </div>
 
                         <div className="centering">
-                            <div id="avail-time-btn">
+                            <div id="availTimeContainer">
                                 <strong>Available Reservation Times:</strong> <br></br>
                                 {availableTime}
                             </div>
@@ -172,7 +172,7 @@ class Reservation extends React.Component {
                         </div>
 
                         <div className="centering">
-                            <button onClick={this.handleSubmit} className="submit-btn">Submit</button>
+                            <button onClick={this.handleSubmit} className="submit-btn btn btn-danger">Submit</button>
                         </div>
                     </form>
                 </div>

@@ -202,7 +202,7 @@
                 "price": 1.65
             },
             {
-                "name": "Corn w/ seasoning (3 pieces)",
+                "name": "Corns w/ seasoning (3 pieces)",
                 "price": 3.75
             },
             {
@@ -251,7 +251,7 @@
                 "name": "Combo",
                 "premium": "Dungeness Crab (1.5 lb), King Crab Legs (1 lb), Snow Crab Legs (1 lb), Lobster (1.5 lb)",
                 "seafood": "Shrimp (1 lb), Clams (1 lb), Mussels (1 lb), Crawfish (1 lb)",
-                "includes": "2 corn, 2 potatoes, 4 sausages"
+                "includes": "2 corns, 2 potatoes, 4 sausages"
             }
         ]
     }
