@@ -2,6 +2,20 @@ body {
     background-image: url("images/woodbackground.jpeg")
 }
 
+.sideNavBtn {
+    padding: 5px 5px 5px 5px;
+    background-color: #b52f2f;
+    color: white;
+    margin: auto;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.sideNavBtn:hover {
+    opacity: .7;
+    color: white;
+}
+
 #whitebg {
     background: white;
     width: 64%;
@@ -47,21 +61,17 @@ a:hover {
     margin-bottom: 50px;
 }
 
-.availtimeBtnActive, .availtimeBtn, .takenTime {
+.availtimeBtnActive, .btn-danger, .takenTime {
     margin: 5px;
     width: 100px;
     height: 50px;
 }
 
-.availtimeBtnActive, .submit-btn {
-    background-color: #cc3f3f;
+.selectedTime, .submit-btn {
+    background-color:  #a00000;
     color: white;
 }
 
-.availtimeBtn {
-    background-color: #b52f2f;
-    color: #fff9a8
-}
 
 #availTimeContainer {
     margin: auto;

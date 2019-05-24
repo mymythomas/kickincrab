@@ -19,8 +19,17 @@ function Home() {
                 </div>
                 <div className="col-4 navigation">
                     <h2 class="titleHeader">Navigation</h2>
+                    <a href="/home">
+                        <div class="btn sideNavBtn">Home</div>
+                    </a>
                     <a href="/menu">
-                        <div style={{padding: "5px 5px 5px 5px", backgroundColor: "blue", margin: "auto"}}>Menu</div>
+                        <div class="btn sideNavBtn">Menu</div>
+                    </a>
+                    <a href="/locations">
+                        <div class="btn sideNavBtn">Locations</div>
+                    </a>
+                    <a href="/reservation">
+                        <div class="btn sideNavBtn">Make a Reservation!</div>
                     </a>
                 </div>
             </div>
