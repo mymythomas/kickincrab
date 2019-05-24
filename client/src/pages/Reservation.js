@@ -172,7 +172,7 @@ class Reservation extends React.Component {
                         </div>
 
                         <div className="centering">
-                            <button onClick={this.handleSubmit} className="btn btn-danger">Submit</button>
+                            <button onClick={this.handleSubmit} className="submit-btn btn btn-danger">Submit</button>
                         </div>
                     </form>
                 </div>
