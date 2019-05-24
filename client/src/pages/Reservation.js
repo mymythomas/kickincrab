@@ -104,10 +104,12 @@ class Reservation extends React.Component {
 
         return (
             <div className="container">
-                <div>
+                <div  className="centering">
                     <h1 style={{ textAlign: "center" }}><strong>Make A Reservation!</strong></h1>
                     <p>
-                        Please fill out your information below to make a reservation. <br />Please note that any parties with <b><u>8 or more</u></b> people will have an automatic <b><u>18% service charge</u></b> added to their bill. <br />Please speak with your server for more information.
+                        Please fill out your information below to make a reservation. <br />
+                        Please note that any parties with <b><u>8 or more</u></b> people will have an automatic <b><u>18% service charge</u></b> added to their bill. <br />
+                        Please speak with your server for more information.
                     </p>
                 </div>
 
@@ -119,7 +121,7 @@ class Reservation extends React.Component {
                             <input
                                 value={this.state.name}
                                 onChange={this.handleInputChange('name')}
-                                className="name res-control centering"
+                                className="name res-control"
                                 placeholder="Your name goes here"
                                 type="name"
                                 name="name"
@@ -135,25 +137,24 @@ class Reservation extends React.Component {
                         </div>
 
                         <div className="centering">
-                            <strong htmlFor="numInParty">Number of guests:</strong> <br />
-                            <p>(Including children of all ages, they still require a space so we need to account for them as well).</p>
+                            <strong htmlFor="numInParty">Number of guests:</strong> <br></br>
                             <input
                                 type="text"
-                                className="res-control centering"
+                                className="res-control"
                                 maxLength="2"
-                                placeholder="1-99"
                                 style={{ width: '50px' }}
                                 value={this.state.numInParty}
                                 onChange={this.handleInputChange('numInParty')}
                             >
                             </input> <br></br>
+                            <p>(Including children of all ages, they still require a space so we need to account for them as well).</p>
                         </div>
 
                         <div className="centering">
                             <strong htmlFor="phone">Phone Number: </strong> <br></br>
                             <input
                                 onChange={this.handleInputChange('phoneNum')}
-                                className="phone res-control centering"
+                                className="phone res-control"
                                 placeholder="Your phone number goes here"
                                 value={this.state.phoneNum}
                                 type="tel"
@@ -168,7 +169,7 @@ class Reservation extends React.Component {
                             <input
                                 onChange={this.handleInputChange('email')}
                                 // style={{ width: '200px' }}
-                                className="email res-control centering"
+                                className="email res-control"
                                 placeholder="Your email goes here"
                                 value={this.state.email}
                                 type="email"

@@ -140,9 +140,6 @@ a:hover {
     width: 500px;
 }
 
-.container {
-    text-align: center;
-}
 /* Changing BootStrap default to fit our needs */
 
 @media (min-width: 801px) {
