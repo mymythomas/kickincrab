@@ -1,6 +1,7 @@
 import React from 'react';
 import EmployerPage from './../components/EmployerPage'
 import { userService } from '../components/_services';
+import './style.css';
 
 const axios = require("axios");
 
@@ -40,8 +41,10 @@ class Employer extends React.Component {
     render() {
         return (
             <div className="container">
-                <a className="btn btn-primary" href="/login" role="button">Logout</a>
+                <a className="btn btn-primary emp-btn" href="/login" role="button">Logout</a>
+                
                 <h1>Welcome Back {this.state.user.firstName},</h1>
+                <hr />
                 <p>Here is a list of reservation for {Date()}.</p>
                 <EmployerPage reservations={this.state.currentReservations} delete={this.handleDelete} />
             </div>
