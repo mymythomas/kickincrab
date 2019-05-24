@@ -1,11 +1,16 @@
 import React from "react";
 import { Tabs, Tab, TabPanel, TabList } from "react-web-tabs";
+import Map from '../components/Map'
 
 class Locations extends React.Component {
+
     render() {
+
+
+
         return (
             <Tabs defaultTab="vertical-tab-one" vertical>
-                <TabList style={{overflowX: "hidden", overflowY: "auto", height: "650px" }}>
+                <TabList style={{ overflowX: "hidden", overflowY: "auto", height: "650px" }}>
                     <Tab tabFor="vertical-tab-1">Buena Park, CA</Tab>
                     <Tab tabFor="vertical-tab-2">Chino Hills, CA</Tab>
                     <Tab tabFor="vertical-tab-3">Costa Mesa, CA</Tab>
@@ -33,6 +38,22 @@ class Locations extends React.Component {
                         <strong>Business Hours</strong>: <br />
                         <span style={{ paddingLeft: '25px' }}>Monday - Sunday: 12PM - 10PM</span>
                     </p>
+
+                    <Map
+                        id="kcbuenapark"
+                        options={{
+                            center: { lat: 33.844423, lng: -117.990299 },
+                            zoom: 18
+                        }}
+                        onMapLoad={map => {
+                            new window.google.maps.Marker({
+                                position: { lat: 33.844423, lng: -117.990299 },
+                                map: map,
+                                title: 'Kickin Crab Buena Park'
+                            });
+                        }}
+                    />
+
                 </TabPanel>
 
                 <TabPanel tabId="vertical-tab-2">
@@ -51,6 +72,21 @@ class Locations extends React.Component {
                             Saturday - Sunday: 12PM - 10PM
                         </span>
                     </p>
+
+                    <Map
+                        id="kcchinohills"
+                        options={{
+                            center: { lat: 34.000040, lng: -117.729898 },
+                            zoom: 18
+                        }}
+                        onMapLoad={map => {
+                            new window.google.maps.Marker({
+                                position: { lat: 34.000040, lng: -117.729898 },
+                                map: map,
+                                title: 'Kickin Crab Chino Hills'
+                            });
+                        }}
+                    />
                 </TabPanel>
 
                 <TabPanel tabId="vertical-tab-3">
@@ -72,6 +108,21 @@ class Locations extends React.Component {
                             Sunday: 12PM - 9:30PM
                         </span>
                     </p>
+
+                    <Map
+                        id="kccostamesa"
+                        options={{
+                            center: { lat: 33.673724, lng: -117.920909 },
+                            zoom: 18
+                        }}
+                        onMapLoad={map => {
+                            new window.google.maps.Marker({
+                                position: { lat: 33.673724, lng: -117.920909 },
+                                map: map,
+                                title: 'Kickin Crab Costa Mesa'
+                            });
+                        }}
+                    />
                 </TabPanel>
 
                 <TabPanel tabId="vertical-tab-4">
@@ -84,6 +135,21 @@ class Locations extends React.Component {
                         <strong>Business Hours</strong>: <br />
                         <span style={{ paddingLeft: '25px' }}>Monday - Sunday: 12PM - 10PM</span>
                     </p>
+
+                    <Map
+                        id="kchollywood"
+                        options={{
+                            center: { lat: 34.097430, lng: -118.323150 },
+                            zoom: 18
+                        }}
+                        onMapLoad={map => {
+                            new window.google.maps.Marker({
+                                position: { lat: 34.097430, lng: -118.323150 },
+                                map: map,
+                                title: 'Kickin Crab Hollywood'
+                            });
+                        }}
+                    />
                 </TabPanel>
 
                 <TabPanel tabId="vertical-tab-5">
@@ -108,6 +174,21 @@ class Locations extends React.Component {
                             Sunday: 12PM - 10PM
                         </span>
                     </p>
+
+                    <Map
+                        id="kcirvine"
+                        options={{
+                            center: { lat: 33.688573, lng: -117.832780 },
+                            zoom: 18
+                        }}
+                        onMapLoad={map => {
+                            new window.google.maps.Marker({
+                                position: { lat: 33.688573, lng: -117.832780 },
+                                map: map,
+                                title: 'Kickin Crab Irvine'
+                            });
+                        }}
+                    />
                 </TabPanel>
 
                 <TabPanel tabId="vertical-tab-6">
@@ -126,6 +207,21 @@ class Locations extends React.Component {
                             Saturday - Sunday: 12PM - 10PM
                         </span>
                     </p>
+
+                    <Map
+                        id="kclosangeles"
+                        options={{
+                            center: { lat: 34.009728, lng: -118.337348 },
+                            zoom: 18
+                        }}
+                        onMapLoad={map => {
+                            new window.google.maps.Marker({
+                                position: { lat: 34.009728, lng: -118.337348 },
+                                map: map,
+                                title: 'Kickin Crab Los Angeles'
+                            });
+                        }}
+                    />
                 </TabPanel>
 
                 <TabPanel tabId="vertical-tab-7">
@@ -139,6 +235,21 @@ class Locations extends React.Component {
                         <strong>Business Hours</strong>: <br />
                         <span style={{ paddingLeft: '25px' }}>Monday - Sunday: 12PM - 10PM</span>
                     </p>
+
+                    <Map
+                        id="kclynwood"
+                        options={{
+                            center: { lat: 33.928841, lng: -118.214036 },
+                            zoom: 18
+                        }}
+                        onMapLoad={map => {
+                            new window.google.maps.Marker({
+                                position: { lat: 33.928841, lng: -118.214036 },
+                                map: map,
+                                title: 'Kickin Crab Lynwood'
+                            });
+                        }}
+                    />
                 </TabPanel>
 
                 <TabPanel tabId="vertical-tab-8">
@@ -159,6 +270,21 @@ class Locations extends React.Component {
                             Sunday: 12PM-9:30PM
                         </span>
                     </p>
+
+                    <Map
+                        id="kcriverside"
+                        options={{
+                            center: { lat: 33.941015, lng: -117.287396 },
+                            zoom: 18
+                        }}
+                        onMapLoad={map => {
+                            new window.google.maps.Marker({
+                                position: { lat: 33.941015, lng: -117.287396 },
+                                map: map,
+                                title: 'Kickin Crab Riverside'
+                            });
+                        }}
+                    />
                 </TabPanel>
 
                 <TabPanel tabId="vertical-tab-9">
@@ -177,6 +303,21 @@ class Locations extends React.Component {
                             Saturday-Sunday: 12PM - 10PM
                         </span>
                     </p>
+
+                    <Map
+                        id="kcrowlandheights"
+                        options={{
+                            center: { lat: 33.993543, lng: -117.904429 },
+                            zoom: 18
+                        }}
+                        onMapLoad={map => {
+                            new window.google.maps.Marker({
+                                position: { lat: 33.993543, lng: -117.904429 },
+                                map: map,
+                                title: 'Kickin Crab Rowland Heights'
+                            });
+                        }}
+                    />
                 </TabPanel>
 
                 <TabPanel tabId="vertical-tab-10">
@@ -184,43 +325,20 @@ class Locations extends React.Component {
                     <p>
                         2675 Cropley Ave <br />
                         San Jose, CA 95132 <br />
-                        (Corner of Cropley Ave. and N. Capitol Ave.) <br /><br />
+                        (Corner of Cropley Ave. and N. Capitol Ave.) <br />
+                        <span><strong>Phone Number</strong>: (408) 945-0888</span> <br /><br />
 
-                        <span><strong>Phone Number</strong>: (408) 945-0888</span> <br />
-                        <strong>Business Hours</strong>: <br />
-                        <span style={{ paddingLeft: '25px' }}>
-                            Monday - Friday: 3PM - 10PM
-                        </span> <br />
-                        <span style={{ paddingLeft: '25px' }}>
-                            Saturday-Sunday: 12PM - 10PM
-                        </span>
-                    </p>
-                    <hr />
-
-                    <h4>Address</h4>
-                    <p>
                         1735 E. Capitol Expressway, <br />
                         San Jose, CA 95121 <br />
-                        (Corner of Capitol Expressway and Silver Creek Rd.) <br /><br />
+                        (Corner of Capitol Expressway and Silver Creek Rd.) <br />
+                        <span><strong>Phone Number</strong>: (408) 809-8888</span> <br /><br />
 
-                        <span><strong>Phone Number</strong>: (408) 809-8888</span> <br />
-                        <strong>Business Hours</strong>: <br />
-                        <span style={{ paddingLeft: '25px' }}>
-                            Monday - Friday: 3PM - 10PM
-                        </span> <br />
-                        <span style={{ paddingLeft: '25px' }}>
-                            Saturday-Sunday: 12PM - 10PM
-                        </span>
-                    </p>
-                    <hr />
-
-                    <h4>Address</h4>
-                    <p>
                         1051 Blossom Hill Rd, <br />
                         San Jose, CA 95123 <br />
-                        (Between Almaden Expressway and Sanchez Dr.) <br /><br />
+                        (Between Almaden Expressway and Sanchez Dr.) <br />
+                        <span><strong>Phone Number</strong>: (408) 622-3997</span> <br /><br />
 
-                        <span><strong>Phone Number</strong>: (408) 622-3997</span> <br />
+
                         <strong>Business Hours</strong>: <br />
                         <span style={{ paddingLeft: '25px' }}>
                             Monday - Friday: 3PM - 10PM
@@ -229,6 +347,22 @@ class Locations extends React.Component {
                             Saturday-Sunday: 12PM - 10PM
                         </span>
                     </p>
+
+                    <Map
+                        id="kcsanjose"
+                        options={{
+                            center: { lat: 37.404340, lng: -121.882131 },
+                            zoom: 5
+                        }}
+                        onMapLoad={map => {
+                            new window.google.maps.Marker({
+                                position: { lat: 37.404340, lng: -121.882131 },
+                                
+                                map: map,
+                                title: 'Kickin Crab San Jose'
+                            });
+                        }}
+                    />
                 </TabPanel>
 
                 <TabPanel tabId="vertical-tab-11">
@@ -247,6 +381,22 @@ class Locations extends React.Component {
                             Saturday-Sunday: 12PM - 10PM
                         </span>
                     </p>
+
+                    <Map
+                        id="kcsantaana"
+                        options={{
+                            center: { lat: 33.699046, lng:  -117.885007 },
+                            zoom: 5
+                        }}
+                        onMapLoad={map => {
+                            new window.google.maps.Marker({
+                                position: { lat: 33.699046, lng: -117.885007 },
+                                
+                                map: map,
+                                title: 'Kickin Crab Santa Ana'
+                            });
+                        }}
+                    />
                 </TabPanel>
 
                 <TabPanel tabId="vertical-tab-12">
@@ -254,9 +404,14 @@ class Locations extends React.Component {
                     <p>
                         15496 Magnolia St., Suite 101, <br />
                         Westminster, CA 92683 <br />
-                        (Corner of Magnolia St. and Mc Fadden Ave.) <br /><br />
+                        (Corner of Magnolia St. and Mc Fadden Ave.) <br />
+                        <span><strong>Phone Number</strong>: (714) 892-9888</span> <br /><br />
 
-                        <span><strong>Phone Number</strong>: (714) 892-9888</span> <br />
+                        6777-A4 Westminster Blvd., <br />
+                        Westminster, CA 92683 <br />
+                        (Corner of Westminster Blvd. and Goldenwest) <br />
+                        <span><strong>Phone Number</strong>: (714) 799-7770</span> <br /><br />
+
                         <strong>Business Hours</strong>: <br />
                         <span style={{ paddingLeft: '25px' }}>
                             Monday - Friday: 3PM - 10PM
@@ -266,21 +421,21 @@ class Locations extends React.Component {
                         </span>
                     </p> <hr />
 
-                    <h4>Address</h4>
-                    <p>
-                        6777-A4 Westminster Blvd., <br />
-                        Westminster, CA 92683 <br />
-                        (Corner of Westminster Blvd. and Goldenwest) <br /><br />
-
-                        <span><strong>Phone Number</strong>: (714) 799-7770</span> <br />
-                        <strong>Business Hours</strong>: <br />
-                        <span style={{ paddingLeft: '25px' }}>
-                            Monday - Friday: 3PM - 10PM
-                        </span> <br />
-                        <span style={{ paddingLeft: '25px' }}>
-                            Saturday-Sunday: 12PM - 10PM
-                        </span>
-                    </p>
+                    <Map
+                        id="kcswestminster"
+                        options={{
+                            center: { lat: 33.737936, lng:  -117.971805 },
+                            zoom: 5
+                        }}
+                        onMapLoad={map => {
+                            new window.google.maps.Marker({
+                                position: { lat: 33.737936, lng:  -117.971805 },
+                                
+                                map: map,
+                                title: 'Kickin Crab Westminster'
+                            });
+                        }}
+                    />
                 </TabPanel>
 
                 <TabPanel tabId="vertical-tab-13">
@@ -305,6 +460,22 @@ class Locations extends React.Component {
                             Sunday: 12PM - 10PM
                         </span>
                     </p>
+
+                    <Map
+                        id="kccarrollton"
+                        options={{
+                            center: { lat: 32.981612, lng: -96.908644 },
+                            zoom: 5
+                        }}
+                        onMapLoad={map => {
+                            new window.google.maps.Marker({
+                                position: { lat:32.981612, lng: -96.908644},
+                                
+                                map: map,
+                                title: 'Kickin Crab Carrollton'
+                            });
+                        }}
+                    />
                 </TabPanel>
 
                 <TabPanel tabId="vertical-tab-14">
@@ -323,6 +494,22 @@ class Locations extends React.Component {
                             Saturday-Sunday: 12PM - 10PM
                         </span>
                     </p>
+
+                    <Map
+                        id="kcgarland"
+                        options={{
+                            center: { lat:  32.917511, lng: -96.684743 },
+                            zoom: 5
+                        }}
+                        onMapLoad={map => {
+                            new window.google.maps.Marker({
+                                position: { lat: 32.917511, lng: -96.684743},
+                                
+                                map: map,
+                                title: 'Kickin Crab Garland'
+                            });
+                        }}
+                    />
                 </TabPanel>
             </Tabs>
         );

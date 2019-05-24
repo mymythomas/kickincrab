@@ -1,7 +1,6 @@
 import React from 'react';
 import Scroller from '../components/Scroller/index'
 
-
 function Home() {
     return (
         <React.Fragment>
