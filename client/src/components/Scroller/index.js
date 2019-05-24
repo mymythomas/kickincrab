@@ -31,10 +31,10 @@ class Scroller extends React.Component {
     render() {
         return (
             <div className="scroller">
-                <img className="mySlides" alt="pic1" src="images/storefront.jpg" />
+                <img className="mySlides" alt="pic1" src="images/food.jpeg" />
                 <img className="mySlides" alt="pic2" src="images/crawfishHeart.jpg" />
-                <img className="mySlides" alt="pic3" src="https://i.ytimg.com/vi/Yj7ja6BANLM/maxresdefault.jpg" />
-                <img className="mySlides" alt="pic4" src="https://i.kym-cdn.com/photos/images/newsfeed/001/239/941/d56.jpg" />
+                <img className="mySlides" alt="pic3" src="images/dinnerphoto.jpg" />
+                <img className="mySlides" alt="pic4" src="images/storefront.jpg" />
             </div>
         )
     }
