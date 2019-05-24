@@ -78,13 +78,13 @@ class Reservation extends React.Component {
 
     // Handles all input change. Depending on the input it will validate accordingly. Key is the parameter passed when the function is called and is linked to the key of the state.
     handleInputChange = key => event => {
-        if (key === "phoneNum" && event.target.value <= 1) {
+        if ((key === "phoneNum" && event.target.value <= 1) || (key === "numInParty" && event.target.value <= 1)) {
             return this.setState({
                 [key]: event.target.value
             });
         };
         // The RegEx checks if ANY non number is inputed and stops the rest of the function from executing thus preventing the user from inputing anything but a number for phone number
-        if (key === "phoneNum" && !/^\d+$/.test(event.target.value)) return;
+        if ((key === "phoneNum" && !/^\d+$/.test(event.target.value)) || (key === "numInParty" && !/^\d+$/.test(event.target.value))) return;
         this.setState({
             [key]: event.target.value
         });
@@ -144,6 +144,7 @@ class Reservation extends React.Component {
                                 maxLength="2"
                                 style={{ width: '50px' }}
                                 value={this.state.numInParty}
+                                placeholder="1-99"
                                 onChange={this.handleInputChange('numInParty')}
                             >
                             </input> <br></br>
