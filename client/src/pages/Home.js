@@ -15,21 +15,23 @@ function Home() {
                     </p>
                     <p>
                         It ain't working. Random words here. I like tacos. We charge for refills now.
+                        
+                        RANDOM TEXT RANDOM TEXT RANDOM TEXT RANDOM TEXT RANDOM TEXT RANDOM TEXT RANDOM TEXT RANDOM TEXT RANDOM TEXT RANDOM TEXT RANDOM TEXT RANDOM TEXT RANDOM TEXT RANDOM TEXT RANDOM TEXT RANDOM TEXT RANDOM TEXT RANDOM TEXT RANDOM TEXT RANDOM TEXT RANDOM TEXT RANDOM TEXT RANDOM TEXT RANDOM TEXT RANDOM TEXT RANDOM TEXT RANDOM TEXT RANDOM TEXT RANDOM TEXT RANDOM TEXT RANDOM TEXT RANDOM TEXT RANDOM TEXT RANDOM TEXT RANDOM TEXT RANDOM TEXT RANDOM TEXT RANDOM TEXT 
                     </p>
                 </div>
                 <div className="col-4 navigation">
                     <h2 class="titleHeader">Navigation</h2>
                     <a href="/home">
-                        <div class="btn sideNavBtn">Home</div>
+                        <div class="btn sideNavBtn"><i class="fas fa-home"></i> Home</div>
                     </a>
                     <a href="/menu">
-                        <div class="btn sideNavBtn">Menu</div>
+                        <div class="btn sideNavBtn"><i class="fas fa-fish"></i> Menu</div>
                     </a>
                     <a href="/locations">
-                        <div class="btn sideNavBtn">Locations</div>
+                        <div class="btn sideNavBtn"><i class="fas fa-location-arrow"></i> Locations</div>
                     </a>
                     <a href="/reservation">
-                        <div class="btn sideNavBtn">Make a Reservation!</div>
+                        <div class="btn sideNavBtn"><i class="fas fa-calendar"></i> Make a Reservation</div>
                     </a>
                 </div>
             </div>

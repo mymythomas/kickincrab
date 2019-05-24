@@ -67,9 +67,17 @@ a:hover {
     height: 50px;
 }
 
-.selectedTime, .submit-btn {
+.selectedTime {
     background-color:  #a00000;
     color: white;
+}
+
+.submit-btn {
+    width: 80px;
+    height: 30px;
+    margin: auto;
+    padding: 0px;
+    margin: 0px;
 }
 
 
