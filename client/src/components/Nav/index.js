@@ -24,26 +24,6 @@ class Navbar extends Component {
                     <Nav.Link className={window.location.pathname === "/reservation" ? "active" : ""} href="/reservation">Reservation</Nav.Link>
                 </li>
             </ul>
-
-            // <div className="navigation">
-            //     <Nav className="justify-content-center">
-            //         <Nav.Item>
-
-            //         </Nav.Item>
-            //         <Nav.Item>
-
-            //         </Nav.Item>
-            //         <Nav.Item>
-
-            //         </Nav.Item>
-            //         <Nav.Item>
-
-            //         </Nav.Item>
-            //         <Nav.Item>
-            //             <Nav.Link href="/employer">Log In</Nav.Link>
-            //         </Nav.Item>
-            //     </Nav>
-            // </div>
         )
     }
 
