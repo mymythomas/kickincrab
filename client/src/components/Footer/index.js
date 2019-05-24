@@ -10,7 +10,7 @@ function Footer() {
                 <span>© Copyright 2019 TheKickinCrab.com | All Rights Reserved.</span>
                 <br />
 
-                <Button href="/employer"><i className="fas fa-sign-in-alt"></i> Employer Page</Button>
+                <Button href="/employer" className="emp-btn"><i className="fas fa-sign-in-alt"></i> Employer Page</Button>
             </div>
             <div className="rightfooter col-4">
             <Card>
@@ -19,8 +19,8 @@ function Footer() {
                 <Card.Text>
                       Shoot us a message and we will get right back to ya with some hot deets.
                 </Card.Text>
-                <Card.Link href="#"><i className="fab fa-facebook"></i><span> Facebook</span></Card.Link>
-                 <Card.Link href="#"><i className="fab fa-instagram"></i><span> Instagram</span></Card.Link>
+                <Card.Link href="#" className="social-btn"><i className="fab fa-facebook"></i><span> Facebook</span></Card.Link>
+                 <Card.Link href="#" className="social-btn"><i className="fab fa-instagram"></i><span> Instagram</span></Card.Link>
                  </Card.Body>
             </Card>
 
