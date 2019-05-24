@@ -93,7 +93,7 @@ class LoginPage extends React.Component {
                                     </InputGroup> <br />
 
                                     <InputGroup>
-                                        <button className="btn btn-dark">Login</button>
+                                        <button className="btn btn-dark loginbtn">Login</button>
                                     </InputGroup>
 
                                 </form>
