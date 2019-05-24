@@ -352,7 +352,7 @@ class Locations extends React.Component {
                         id="kcsanjose"
                         options={{
                             center: { lat: 37.404340, lng: -121.882131 },
-                            zoom: 5
+                            zoom: 18
                         }}
                         onMapLoad={map => {
                             new window.google.maps.Marker({
@@ -386,7 +386,7 @@ class Locations extends React.Component {
                         id="kcsantaana"
                         options={{
                             center: { lat: 33.699046, lng:  -117.885007 },
-                            zoom: 5
+                            zoom: 18
                         }}
                         onMapLoad={map => {
                             new window.google.maps.Marker({
@@ -425,7 +425,7 @@ class Locations extends React.Component {
                         id="kcswestminster"
                         options={{
                             center: { lat: 33.737936, lng:  -117.971805 },
-                            zoom: 5
+                            zoom: 18
                         }}
                         onMapLoad={map => {
                             new window.google.maps.Marker({
@@ -465,7 +465,7 @@ class Locations extends React.Component {
                         id="kccarrollton"
                         options={{
                             center: { lat: 32.981612, lng: -96.908644 },
-                            zoom: 5
+                            zoom: 18
                         }}
                         onMapLoad={map => {
                             new window.google.maps.Marker({
@@ -499,7 +499,7 @@ class Locations extends React.Component {
                         id="kcgarland"
                         options={{
                             center: { lat:  32.917511, lng: -96.684743 },
-                            zoom: 5
+                            zoom: 18
                         }}
                         onMapLoad={map => {
                             new window.google.maps.Marker({
